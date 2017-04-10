@@ -158,6 +158,13 @@ tape("timeFormat(\"%p\")(date) formats AM or PM", function(test) {
   test.end();
 });
 
+tape("timeFormat(\"%Q\")(date) formats unix timestamp", function(test) {
+  var f = timeFormat.timeFormat("%Q");
+  test.equal(f(date.local(1990, 0, 1,  0)), "631180800000");
+  test.equal(f(date.local(1990, 0, 1,  13)), "631227600000");
+  test.end();
+})
+
 tape("timeFormat(\"%S\")(date) formats zero-padded seconds", function(test) {
   var f = timeFormat.timeFormat("%S");
   test.equal(f(date.local(1990, 0, 1, 0, 0,  0)), "00");

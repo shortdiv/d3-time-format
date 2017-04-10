@@ -58,6 +58,7 @@ export default function formatLocale(locale) {
     "m": formatMonthNumber,
     "M": formatMinutes,
     "p": formatPeriod,
+    "Q": formatUnixTimestamp,
     "S": formatSeconds,
     "U": formatWeekNumberSunday,
     "w": formatWeekdayNumber,
