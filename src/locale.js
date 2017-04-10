@@ -85,6 +85,7 @@ export default function formatLocale(locale) {
     "m": formatUTCMonthNumber,
     "M": formatUTCMinutes,
     "p": formatUTCPeriod,
+    "Q": formatUnixTimestamp,
     "S": formatUTCSeconds,
     "U": formatUTCWeekNumberSunday,
     "w": formatUTCWeekdayNumber,
@@ -287,6 +288,10 @@ export default function formatLocale(locale) {
 
   function formatUTCPeriod(d) {
     return locale_periods[+(d.getUTCHours() >= 12)];
+  }
+
+  function formatUnixTimestamp(d) {
+    return d.getTime()
   }
 
   return {
